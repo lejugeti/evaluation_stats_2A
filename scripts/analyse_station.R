@@ -2,6 +2,7 @@
 
 if(!require("PCAmixdata")) install.packages("PCAmixdata")
 
+station = read.table("./data/station.txt", header=TRUE)
 split = splitmix(station)
 station_quali = split$X.quali
 station_quanti = split$X.quanti
@@ -53,6 +54,7 @@ plot(mat)
 #à vérifier avec drop
 
 drop1(modele3V)
+step(modele3V)
 #Retirer nbconc donne l'AIC le moins élevé
 #La variable à retirer est nbconc
 
